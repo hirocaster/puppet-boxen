@@ -78,7 +78,7 @@ Puppet::Type.type(:package).provide :compressed_app,
     execute [
       "/usr/sbin/chown",
       "-R",
-      "#{Facter[:boxen_user].value}:admin",
+      "#{Facter[:luser].value}:admin",
       "/Applications/#{name}.app"
     ].join(" "), :uid => 'root'
 
